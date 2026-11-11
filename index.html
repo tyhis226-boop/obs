@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bank Game — OBS</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="config.js"></script>
+  <script defer src="obs.js"></script>
+</head>
+<body class="obs-page">
+  <main class="scene">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">₸</span><span>BANK <b>GAME</b></span></div>
+      <div class="live"><i></i> LIVE GAME</div>
+    </header>
+
+    <section class="stage">
+      <aside class="side side-left">
+        <article class="panel bank-panel">
+          <div class="eyebrow">ОБЩИЙ БАНК</div>
+          <div class="bank-value" id="bankTotal">0 ₸</div>
+          <div class="panel-foot">Стартовый банк + новые пополнения</div>
+        </article>
+        <article class="panel timer-panel">
+          <div class="eyebrow">ДО КОНЦА ИГРЫ</div>
+          <div class="timer" id="timer">02:00</div>
+          <div class="timer-track"><span id="timerProgress"></span></div>
+          <div class="panel-foot" id="gameStatus">Ожидание запуска</div>
+        </article>
+      </aside>
+
+      <section class="phone-wrap">
+  <iframe
+    id="bankPhone"
+    title="Банковский интерфейс"
+    loading="eager"
+    scrolling="no">
+  </iframe>
+</section>
+
+      <aside class="side side-right">
+        <article class="panel leader-panel">
+          <div class="eyebrow">ТЕКУЩИЙ ЛИДЕР</div>
+          <div class="leader-crown">♛</div>
+          <div class="leader-name" id="leaderName">Пока нет лидера</div>
+          <div class="leader-amount" id="leaderAmount">—</div>
+          <div class="leader-note">Рекорд одного пополнения</div>
+        </article>
+        <article class="panel rule-panel">
+          <div class="eyebrow">ПРАВИЛА</div>
+          <div class="rule-line"><span>01</span> Одно пополнение — один рекорд</div>
+          <div class="rule-line"><span>02</span> Нужно превзойти лидера минимум на 1 ₸</div>
+          <div class="rule-line"><span>03</span> Новый рекорд сбрасывает таймер</div>
+        </article>
+      </aside>
+    </section>
+    <footer class="footer"><span>ОЖИДАНИЕ НОВЫХ ПОПОЛНЕНИЙ</span><span id="lastUpdate">Подключение…</span></footer>
+  </main>
+</body>
+</html>
